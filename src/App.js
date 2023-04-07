@@ -1,6 +1,7 @@
 
 import './App.css';
-
+import { Counter } from './Counter';
+import { Product } from './Product';
 
 function Greeting(){
 
@@ -23,6 +24,8 @@ function Name(props){
 
 
 function Surname(props){
+
+
   return(
     <span>{props.surname}</span>
   );
@@ -34,7 +37,7 @@ function User(props){
   if(props.surname){
     surname = props.surname;
   } else{
-    surname = "no surname"
+    surname = "no surname";
   }
 
 
@@ -45,8 +48,9 @@ function User(props){
 
     <a href = {props.href}>GO to Google</a>
     </div>
-  )
+  );
 }
+
 
 
 
@@ -58,6 +62,20 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+
+        <Product
+        ProductName = "Bananas"
+        Price = "1$"
+        Description = "Fresh bananas from Ecuador"
+        />
+        <Product
+        ProductName = "Tandz"
+        Price = "10$"
+        Description = "Fresh tandz from Kirovakan"
+        />
+
+        <Counter defaultValue = {0}/>
+
         <Greeting />
 
         <User 
